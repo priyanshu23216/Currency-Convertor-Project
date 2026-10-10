@@ -1,0 +1,188 @@
+/* Import a clean, modern geometric font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Treat the HTML element as the full-screen background */
+html {
+    min-height: 100vh;
+    /* Deep, eye-friendly dark gradient background */
+    background: linear-gradient(135deg, #0b1120 0%, #172338 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Turn the Body into the actual UI Card */
+body {
+    /* Dark card background */
+    background-color: #1e293b;
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    /* Soft dark shadow */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    
+    /* Use CSS Grid to automatically place the items side-by-side */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+/* Hide the <br> tags since our CSS Grid handles the spacing perfectly now */
+br {
+    display: none;
+}
+
+/* Force these specific elements to span all the way across the card */
+h1, #amount, .message, #result {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f1f5f9; /* Off-white for dark mode */
+    margin-bottom: 0.5rem;
+}
+
+/* Amount Input */
+#amount {
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 2px solid #334155;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    text-align: center;
+    
+    /* Very dark background for input */
+    background-color: #0f172a;
+    color: #ffffff; 
+    font-weight: 600;
+}
+
+#amount::placeholder {
+    color: #64748b; 
+    font-weight: 400;
+}
+
+#amount:focus {
+    border-color: #6366f1;
+    background-color: #0b1120;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+/* From and To Boxes */
+.from, .to {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    /* Lighter dark gray for inner boxes */
+    background: #334155;
+    padding: 1.2rem 1rem;
+    border-radius: 16px;
+    border: 1px solid #475569;
+}
+
+/* "From" / "To" Labels */
+.from p, .to p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Flag Images */
+.from img, .to img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes the flags circular */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    object-fit: cover;
+    background: #0f172a;
+}
+
+/* Dropdowns */
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    
+    /* Dark Dropdown */
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+/* Fix dropdown options background in some browsers */
+select option {
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+/* Swap Icon (Middle) */
+.fa-arrow-right-arrow-left {
+    font-size: 1.2rem;
+    color: #818cf8; /* Lighter indigo for better dark mode visibility */
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.fa-arrow-right-arrow-left:hover {
+    transform: scale(1.2) rotate(180deg);
+    color: #a5b4fc;
+}
+
+/* Exchange Rate Message */
+.message {
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #e2e8f0; /* Light text for readability */
+    margin-top: 0.5rem;
+}
+
+/* Calculate Button */
+#result {
+    padding: 1rem;
+    background-color: #6366f1;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    margin-top: 0.5rem;
+}
+
+#result:hover {
+    background-color: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+}
+
+#result:active {
+    transform: translateY(0);
+}
