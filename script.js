@@ -8,7 +8,6 @@ let toImage = document.querySelector("#toCntry");
 for (let country in countryList) {
     let option1 = document.createElement("option");
     let option2 = document.createElement("option");
-
     option1.innerText = countryList[country];
     option1.setAttribute("From-countryCode" ,country);
 
